@@ -5,7 +5,12 @@ const app = require('../app')
 const api = supertest(app)
 const Blog = require('../models/blog')
 
-describe('general', () => {
+/* 
+    NOTE : All tests wont work after token authorization implementation 
+    TODO: Find which ones and fix them
+*/
+
+describe('blogs', () => {
     beforeEach(async () => {
         await Blog.deleteMany({})
         await Blog.insertMany(helper.initialBlogs)
